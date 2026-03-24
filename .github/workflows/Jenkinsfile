@@ -18,7 +18,6 @@ pipeline {
             steps {
                 bat 'docker run --rm 2024ht66055 pytest'
             }
-            
         }
     }
 }
