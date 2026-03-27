@@ -36,7 +36,7 @@ pip install -r requirements.txt
 python src/aceest_fitness.py 
 
 The ACEest Fitness application interface will open, allowing the user to manage gym clients, workouts, and progress tracking.
-```bash
+```
 Application is accessible via http://127.0.0.1:5000/
 
 ![Screenshot](https://github.com/user-attachments/assets/67b5df68-fb2e-4ccf-8456-ed6f4cd7103b)
