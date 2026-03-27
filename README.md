@@ -36,4 +36,5 @@ pip install -r requirements.txt
 python src/aceest_fitness.py 
 ```
 The ACEest Fitness application interface will open, allowing the user to manage gym clients, workouts, and progress tracking.
+
 <img width="455" height="206" alt="image" src="https://github.com/user-attachments/assets/67b5df68-fb2e-4ccf-8456-ed6f4cd7103b" />
