@@ -46,6 +46,11 @@ After adding the workouts personal names
 <img width="511" height="332" alt="image" src="https://github.com/user-attachments/assets/7fb5496f-e2df-49da-89fe-941aedf624b0" />
 Workout Plan assigned to user
 <img width="354" height="458" alt="image" src="https://github.com/user-attachments/assets/7b0f9f0b-ee6c-4ae8-b99e-586ab1073175" />
+The project uses Pytest to validate application functionality.
 
+##Run the tests using
+pytest
+If all tests pass, the output will show successful execution of the test cases.
+<img width="707" height="110" alt="image" src="https://github.com/user-attachments/assets/4478d509-c712-4421-b572-f31368da897f" />
 
 
