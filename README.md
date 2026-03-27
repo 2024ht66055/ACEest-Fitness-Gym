@@ -39,7 +39,7 @@ The ACEest Fitness application interface will open, allowing the user to manage 
 
 Application is accessible via http://127.0.0.1:5000/
 
-![Screenshot](https://github.com/user-attachments/assets/67b5df68-fb2e-4ccf-8456-ed6f4cd7103b" )
+![Screenshot](https://github.com/user-attachments/assets/67b5df68-fb2e-4ccf-8456-ed6f4cd7103b)
 
 ![LOGIN PAGE] <img width="448" height="303" alt="image" src="https://github.com/user-attachments/assets/0b8c02cc-9711-4320-bae3-ef524e3027af" />
 
