@@ -242,8 +242,8 @@ Developer Code → GitHub → GitHub Actions (Test + Build)
 
 ## 👨‍💻 Author
 
-Rupesh Naik - 2024HT66055
-Developed as part of a DevOps learning assignment.
+* Rupesh Naik - 2024HT66055
+* Developed as part of a DevOps learning assignment.
 
 ---
 
