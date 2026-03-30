@@ -219,6 +219,7 @@ GitHub Actions automates testing on every code change.
 ## 📸 Screenshots
 
 Below Windows shows different activities done to complete the assignment.
+---
 ```
 *LOGIN PAGE
 <img width="370" height="224" alt="image" src="https://github.com/user-attachments/assets/32d92f6b-b907-4c73-99b6-01282405e791" />
