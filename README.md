@@ -216,7 +216,8 @@ GitHub Actions automates testing on every code change.
 * Prevents broken code from entering main branch
 
 ---
-```bash
+
+```
 ## 📸 Screenshots
 
 Below Windows shows different activities done to complete the assignment.
