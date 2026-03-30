@@ -221,6 +221,7 @@ Below Windows shows different activities done to complete the assignment.
 * PYTEST RUN
 <img width="766" height="142" alt="image" src="https://github.com/user-attachments/assets/dbeb00ff-050b-46ce-94c4-dd7ba8ac57c0" />
 ```
+---
 *GIT RESPOSITORY
 
 <img width="1128" height="586" alt="image" src="https://github.com/user-attachments/assets/7c22651c-0105-4c45-8f0d-f5e7a87727be" />
@@ -229,7 +230,7 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="1128" height="515" alt="image" src="https://github.com/user-attachments/assets/7b2199db-0e0f-47f6-aeaa-b62034b7c756" />
 
-
+---
 ```
 * JENKINS
 <img width="1348" height="454" alt="image" src="https://github.com/user-attachments/assets/a618f8c2-53f1-4899-beb3-826ec3a06910" />
