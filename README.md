@@ -215,13 +215,23 @@ Below Windows shows different activities done to complete the assignment.
 * LOGIN PAGE
 <img width="370" height="224" alt="image" src="https://github.com/user-attachments/assets/32d92f6b-b907-4c73-99b6-01282405e791" />
 
-* Users added
+* USERS ADDED FLASK
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
 
-* pytest run
+* PYTEST RUN
 <img width="766" height="142" alt="image" src="https://github.com/user-attachments/assets/dbeb00ff-050b-46ce-94c4-dd7ba8ac57c0" />
 
-* Jenkins
+*GIT RESPOSITORY
+
+<img width="1128" height="586" alt="image" src="https://github.com/user-attachments/assets/7c22651c-0105-4c45-8f0d-f5e7a87727be" />
+
+<img width="1334" height="469" alt="image" src="https://github.com/user-attachments/assets/bef4f0a7-d01e-4b45-aee6-3d954d851d16" />
+
+<img width="1128" height="515" alt="image" src="https://github.com/user-attachments/assets/7b2199db-0e0f-47f6-aeaa-b62034b7c756" />
+
+
+```
+* JENKINS
 <img width="1348" height="454" alt="image" src="https://github.com/user-attachments/assets/a618f8c2-53f1-4899-beb3-826ec3a06910" />
 
 <img width="1172" height="419" alt="image" src="https://github.com/user-attachments/assets/5ea63ed3-35a0-4f51-9bf8-9295c65bb0fe" />
@@ -237,13 +247,7 @@ Below Windows shows different activities done to complete the assignment.
 <img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/89634ad1-5c20-43c6-86e6-9145fe71a41d" />
 
 ```
-
-
-
-
-
-
-
+---
 
 ## 🔁 DevOps Workflow Summary
 
