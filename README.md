@@ -6,6 +6,7 @@
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Screenshots](#-screenshots)
+- [Conclusion](#-conclusion)
 
 ---
 A complete **Flask-based Gym Management System** developed as part of a **DevOps assignment**, demonstrating modern software engineering practices including:
@@ -217,15 +218,14 @@ GitHub Actions automates testing on every code change.
 ---
 ## 📸 Screenshots
 
-```
 Below Windows shows different activities done to complete the assignment.
-
+```
 *LOGIN PAGE
 <img width="370" height="224" alt="image" src="https://github.com/user-attachments/assets/32d92f6b-b907-4c73-99b6-01282405e791" />
-
+```
 *USERS ADDED FLASK
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
-
+```
 *PYTEST RUN
 <img width="766" height="142" alt="image" src="https://github.com/user-attachments/assets/dbeb00ff-050b-46ce-94c4-dd7ba8ac57c0" />
 ```
