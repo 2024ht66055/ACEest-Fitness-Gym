@@ -216,7 +216,7 @@ GitHub Actions automates testing on every code change.
 * Prevents broken code from entering main branch
 
 ---
-```
+```bash
 ## 📸 Screenshots
 
 Below Windows shows different activities done to complete the assignment.
@@ -228,9 +228,10 @@ Below Windows shows different activities done to complete the assignment.
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
 ```
 <img width="766" height="142" alt="image" src="https://github.com/user-attachments/assets/dbeb00ff-050b-46ce-94c4-dd7ba8ac57c0" />
+---
 ```
 
----
+
 **GIT RESPOSITORY**
 
 <img width="1128" height="586" alt="image" src="https://github.com/user-attachments/assets/7c22651c-0105-4c45-8f0d-f5e7a87727be" />
