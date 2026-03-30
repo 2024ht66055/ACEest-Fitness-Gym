@@ -222,7 +222,7 @@ Below Windows shows different activities done to complete the assignment.
 ---
 ```
 *LOGIN PAGE
-<img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/daeed433-e2f1-4cea-acff-799dd5bf545c" />
+<img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/f981dffe-f288-4e0e-ba22-04562e4e53c3" />
 ```
 *USERS ADDED FLASK
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
