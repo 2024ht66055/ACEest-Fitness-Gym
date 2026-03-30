@@ -215,7 +215,7 @@ GitHub Actions automates testing on every code change.
 * Automatic validation of every change
 * Prevents broken code from entering main branch
 
----
+
 ## 📸 Screenshots
 
 Below Windows shows different activities done to complete the assignment.
