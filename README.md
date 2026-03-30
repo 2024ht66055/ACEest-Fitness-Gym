@@ -1,4 +1,4 @@
-<img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/89634ad1-5c20-43c6-86e6-9145fe71a41d" /># 🏋️ ACEest Fitness & Gym – DevOps Project
+# 🏋️ ACEest Fitness & Gym – DevOps Project
 
 A complete **Flask-based Gym Management System** developed as part of a **DevOps assignment**, demonstrating modern software engineering practices including:
 
@@ -234,9 +234,9 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="1172" height="508" alt="image" src="https://github.com/user-attachments/assets/168b3258-0a57-4724-94b1-cbe7e7b3ad55" />
 
+<img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/89634ad1-5c20-43c6-86e6-9145fe71a41d" />
 
-
-
+```
 
 
 
