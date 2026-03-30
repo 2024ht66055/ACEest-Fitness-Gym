@@ -242,17 +242,17 @@ Below Windows shows different activities done to complete the assignment.
 ```
 *JENKINS
 <img width="1348" height="454" alt="image" src="https://github.com/user-attachments/assets/a618f8c2-53f1-4899-beb3-826ec3a06910" />
-
+```
 <img width="1172" height="419" alt="image" src="https://github.com/user-attachments/assets/5ea63ed3-35a0-4f51-9bf8-9295c65bb0fe" />
-
+```
 <img width="1281" height="551" alt="image" src="https://github.com/user-attachments/assets/80f1d1e8-8e14-420e-a862-26059a24ff28" />
-
+```
 <img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/c8f5a0f4-d2b0-4062-b74f-b65e193f8cfc" />
-
+```
 <img width="1280" height="516" alt="image" src="https://github.com/user-attachments/assets/2f8033ae-ca1a-44c6-be4e-9560909f94c5" />
-
+```
 <img width="1172" height="508" alt="image" src="https://github.com/user-attachments/assets/168b3258-0a57-4724-94b1-cbe7e7b3ad55" />
-
+```
 <img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/89634ad1-5c20-43c6-86e6-9145fe71a41d" />
 
 ```
