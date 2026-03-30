@@ -216,18 +216,17 @@ GitHub Actions automates testing on every code change.
 * Prevents broken code from entering main branch
 
 ---
-
+```
 ## 📸 Screenshots
 
 Below Windows shows different activities done to complete the assignment.
 
 **ACest-Fitness-Gym Testing Page**
 
-```
 <img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/cbe5c8ab-6921-4530-834e-264ee0bcdb4a" />
-
+```
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
-
+```
 <img width="766" height="142" alt="image" src="https://github.com/user-attachments/assets/dbeb00ff-050b-46ce-94c4-dd7ba8ac57c0" />
 ```
 
