@@ -2,11 +2,9 @@
 ---
 
 ## 📖 Table of Contents
-- [About](#-about)
-- [Tech Stack](#-tech-stack)
-- [Installation](#-installation)
-- [Usage](#-usage)
+- [Project Overview](#-about)
 - [Features](#-features)
+- [Tech Stack](#-tech-stack)
 - [Screenshots](#-screenshots)
 
 ---
