@@ -1,5 +1,15 @@
 # 🏋️ ACEest Fitness & Gym – DevOps Project
+---
 
+## 📖 Table of Contents
+- [About](#-about)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Features](#-features)
+- [Screenshots](#-screenshots)
+
+---
 A complete **Flask-based Gym Management System** developed as part of a **DevOps assignment**, demonstrating modern software engineering practices including:
 
 * Web application development using Flask
