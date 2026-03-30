@@ -1,4 +1,4 @@
-<img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/cbe5c8ab-6921-4530-834e-264ee0bcdb4a" /># 🏋️ ACEest Fitness & Gym – DevOps Project
+# 🏋️ ACEest Fitness & Gym – DevOps Project
 ---
 
 ## 📖 Table of Contents
@@ -222,7 +222,7 @@ Below Windows shows different activities done to complete the assignment.
 ---
 ```
 *LOGIN PAGE
-<img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/f981dffe-f288-4e0e-ba22-04562e4e53c3" />
+<img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/cbe5c8ab-6921-4530-834e-264ee0bcdb4a" />
 ```
 *USERS ADDED FLASK
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
