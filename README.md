@@ -221,8 +221,8 @@ GitHub Actions automates testing on every code change.
 
 Below Windows shows different activities done to complete the assignment.
 
-
 **ACest-Fitness-Gym Testing Page**
+
 ```
 <img width="324" height="303" alt="image" src="https://github.com/user-attachments/assets/cbe5c8ab-6921-4530-834e-264ee0bcdb4a" />
 ```
