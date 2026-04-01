@@ -65,7 +65,7 @@ The project showcases how an application evolves from **local development to a f
 
 ---
 
-## 🏗️ Tech Stack
+## 🛠 Tech Stack
 
 | Component        | Technology               |
 | ---------------- | ------------------------ |
