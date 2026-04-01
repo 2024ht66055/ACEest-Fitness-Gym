@@ -234,7 +234,7 @@ Below Windows shows different activities done to complete the assignment.
 
 ---
 
-**GIT RESPOSITORY**
+## <img width="48" height="48" alt="icons8-git-48" src="https://github.com/user-attachments/assets/ed9baf75-2723-45a3-af7f-195e42edc098" /> GIT RESPOSITORY
 
 
 <img width="1128" height="586" alt="image" src="https://github.com/user-attachments/assets/7c22651c-0105-4c45-8f0d-f5e7a87727be" />
@@ -242,9 +242,9 @@ Below Windows shows different activities done to complete the assignment.
 <img width="1334" height="469" alt="image" src="https://github.com/user-attachments/assets/bef4f0a7-d01e-4b45-aee6-3d954d851d16" />
 ---
 <img width="1128" height="515" alt="image" src="https://github.com/user-attachments/assets/7b2199db-0e0f-47f6-aeaa-b62034b7c756" />
----
 
-**JENKINS**
+
+## <img width="50" height="50" alt="icons8-jenkins-50" src="https://github.com/user-attachments/assets/0efc2d42-f73a-41f4-a2ee-6da615ee7e54" /> JENKINS
 
 <img width="1348" height="454" alt="image" src="https://github.com/user-attachments/assets/a618f8c2-53f1-4899-beb3-826ec3a06910" />
 
