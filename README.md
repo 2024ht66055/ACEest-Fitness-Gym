@@ -227,8 +227,11 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="903" height="488" alt="image" src="https://github.com/user-attachments/assets/6da60c72-8534-46ad-9151-94d298443260" />
 
+<img width="467" height="503" alt="image" src="https://github.com/user-attachments/assets/2d95f2b3-d63e-45c4-aee8-a5b484262801" />
 
 <img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
+
+<img width="341" height="146" alt="image" src="https://github.com/user-attachments/assets/ff6ef071-9d79-4da5-bdf6-660bb13203a1" />
 
 <img width="1003" height="370" alt="image" src="https://github.com/user-attachments/assets/8b9cbc79-1bef-4141-bef5-c8d85461f5a8" />
 
