@@ -227,12 +227,11 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="903" height="488" alt="image" src="https://github.com/user-attachments/assets/6da60c72-8534-46ad-9151-94d298443260" />
 
-<img width="467" height="503" alt="image" src="https://github.com/user-attachments/assets/2d95f2b3-d63e-45c4-aee8-a5b484262801" />
+<img width="391" height="365" alt="image" src="https://github.com/user-attachments/assets/938b867e-d20f-4ed4-b64e-31779ffb1dbf" />
 
-<img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
+<img width="479" height="493" alt="image" src="https://github.com/user-attachments/assets/c77401eb-340c-439a-8ef2-d0d584746c54" />
 
-<img width="341" height="146" alt="image" src="https://github.com/user-attachments/assets/ff6ef071-9d79-4da5-bdf6-660bb13203a1" />
-
+## <img width="32" height="32" alt="pytest-original-32px" src="https://github.com/user-attachments/assets/8a56976d-cbf6-43a2-a964-378ac692ffa4" /> PYTEST
 <img width="1003" height="370" alt="image" src="https://github.com/user-attachments/assets/8b9cbc79-1bef-4141-bef5-c8d85461f5a8" />
 
 ## <img width="48" height="48" alt="icons8-docker-48" src="https://github.com/user-attachments/assets/07964fed-5d45-4bdc-9143-77485723ce33" /> DOCKER TEST
