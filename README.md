@@ -9,6 +9,9 @@
 - [Conclusion](#-conclusion)
 
 ---
+
+## 🚀 Project Overview
+
 A complete **Flask-based Gym Management System** developed as part of a **DevOps assignment**, demonstrating modern software engineering practices including:
 
 * Web application development using Flask
@@ -16,10 +19,6 @@ A complete **Flask-based Gym Management System** developed as part of a **DevOps
 * Automated testing using Pytest
 * Containerization using Docker
 * CI/CD pipelines using Jenkins and GitHub Actions
-
----
-
-## 🚀 Project Overview
 
 ACEest Fitness & Gym is a lightweight web application designed to manage:
 
