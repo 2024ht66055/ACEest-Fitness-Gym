@@ -2,7 +2,7 @@
 ---
 
 ## 📖 Table of Contents
-- [Project Overview](#-about)
+- [Project Overview](#-project-overview)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Screenshots](#-screenshots)
@@ -38,8 +38,8 @@ The project showcases how an application evolves from **local development to a f
 * Simple login system
 * Default admin user:
 
-  * Username: `admin`
-  * Password: `admin`
+  * Username: `2024ht66055`
+  * Password: `2024@wilp`
 
 ### 👤 Client Management
 
@@ -65,7 +65,7 @@ The project showcases how an application evolves from **local development to a f
 
 ---
 
-## 🏗️ Tech Stack
+## 🛠 Tech Stack
 
 | Component        | Technology               |
 | ---------------- | ------------------------ |
@@ -234,7 +234,7 @@ Below Windows shows different activities done to complete the assignment.
 
 ---
 
-**GIT RESPOSITORY**
+## <img width="48" height="48" alt="icons8-git-48" src="https://github.com/user-attachments/assets/ed9baf75-2723-45a3-af7f-195e42edc098" /> GIT RESPOSITORY
 
 
 <img width="1128" height="586" alt="image" src="https://github.com/user-attachments/assets/7c22651c-0105-4c45-8f0d-f5e7a87727be" />
@@ -242,17 +242,19 @@ Below Windows shows different activities done to complete the assignment.
 <img width="1334" height="469" alt="image" src="https://github.com/user-attachments/assets/bef4f0a7-d01e-4b45-aee6-3d954d851d16" />
 ---
 <img width="1128" height="515" alt="image" src="https://github.com/user-attachments/assets/7b2199db-0e0f-47f6-aeaa-b62034b7c756" />
----
 
-**JENKINS**
+
+## <img width="50" height="50" alt="icons8-jenkins-50" src="https://github.com/user-attachments/assets/0efc2d42-f73a-41f4-a2ee-6da615ee7e54" /> JENKINS
 
 <img width="1348" height="454" alt="image" src="https://github.com/user-attachments/assets/a618f8c2-53f1-4899-beb3-826ec3a06910" />
 
+<img width="1630" height="731" alt="1" src="https://github.com/user-attachments/assets/ce4fd9a0-99cd-4899-91a8-3a616daddd9f" />
+
 <img width="1172" height="419" alt="image" src="https://github.com/user-attachments/assets/5ea63ed3-35a0-4f51-9bf8-9295c65bb0fe" />
 
-<img width="1281" height="551" alt="image" src="https://github.com/user-attachments/assets/80f1d1e8-8e14-420e-a862-26059a24ff28" />
+<img width="1520" height="604" alt="2" src="https://github.com/user-attachments/assets/cafd5529-7265-4bea-ad3d-47f18e7440e8" />
 
-<img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/c8f5a0f4-d2b0-4062-b74f-b65e193f8cfc" />
+<img width="1281" height="551" alt="image" src="https://github.com/user-attachments/assets/80f1d1e8-8e14-420e-a862-26059a24ff28" />
 
 <img width="1280" height="516" alt="image" src="https://github.com/user-attachments/assets/2f8033ae-ca1a-44c6-be4e-9560909f94c5" />
 
