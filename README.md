@@ -2,7 +2,7 @@
 ---
 
 ## 📖 Table of Contents
-- [Project Overview](#-about)
+- [Project Overview](#-project-overview)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Screenshots](#-screenshots)
