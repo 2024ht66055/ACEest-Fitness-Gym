@@ -248,11 +248,13 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="1348" height="454" alt="image" src="https://github.com/user-attachments/assets/a618f8c2-53f1-4899-beb3-826ec3a06910" />
 
+<img width="1630" height="731" alt="1" src="https://github.com/user-attachments/assets/ce4fd9a0-99cd-4899-91a8-3a616daddd9f" />
+
 <img width="1172" height="419" alt="image" src="https://github.com/user-attachments/assets/5ea63ed3-35a0-4f51-9bf8-9295c65bb0fe" />
 
-<img width="1281" height="551" alt="image" src="https://github.com/user-attachments/assets/80f1d1e8-8e14-420e-a862-26059a24ff28" />
+<img width="1520" height="604" alt="2" src="https://github.com/user-attachments/assets/cafd5529-7265-4bea-ad3d-47f18e7440e8" />
 
-<img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/c8f5a0f4-d2b0-4062-b74f-b65e193f8cfc" />
+<img width="1281" height="551" alt="image" src="https://github.com/user-attachments/assets/80f1d1e8-8e14-420e-a862-26059a24ff28" />
 
 <img width="1280" height="516" alt="image" src="https://github.com/user-attachments/assets/2f8033ae-ca1a-44c6-be4e-9560909f94c5" />
 
