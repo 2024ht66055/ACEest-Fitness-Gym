@@ -59,7 +59,7 @@ The project showcases how an application evolves from **local development to a f
 
 ### 🗄️ Database
 
-* SQLite database (`ACEest-Fitness-Gym.db`)
+* SQLite database (`aceest_fitness.db`)
 * Automatically initialized
 
 ---
