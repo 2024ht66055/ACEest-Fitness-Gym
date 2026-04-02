@@ -262,8 +262,18 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="1011" height="292" alt="image" src="https://github.com/user-attachments/assets/89634ad1-5c20-43c6-86e6-9145fe71a41d" />
 
+
+
+## <img width="48" height="48" alt="icons8-git-48" src="https://github.com/user-attachments/assets/ed9baf75-2723-45a3-af7f-195e42edc098" /> Github Actions
+
+<img width="987" height="456" alt="image" src="https://github.com/user-attachments/assets/4b18ef2b-c38e-40b6-b403-54209942eb9c" />
+
+<img width="1016" height="515" alt="image" src="https://github.com/user-attachments/assets/a96f6bb9-9a1a-4dbc-a652-c4ff4b6843f9" />
+
 ```
 ---
+
+
 
 ## 🔁 DevOps Workflow Summary
 
