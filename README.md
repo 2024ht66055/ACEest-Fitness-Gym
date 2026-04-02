@@ -286,9 +286,6 @@ Below Windows shows different activities done to complete the assignment.
 
 <img width="1016" height="515" alt="image" src="https://github.com/user-attachments/assets/a96f6bb9-9a1a-4dbc-a652-c4ff4b6843f9" />
 
-```
----
-
 
 
 ## 🔁 DevOps Workflow Summary
@@ -299,7 +296,6 @@ Developer Code → GitHub → GitHub Actions (Test + Build)
                  Jenkins (Build + Test in Docker)
                     ↓
                Verified Application
-```
 ```
 ---
 
