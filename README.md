@@ -9,6 +9,9 @@
 - [Conclusion](#-conclusion)
 
 ---
+
+## 🚀 Project Overview
+
 A complete **Flask-based Gym Management System** developed as part of a **DevOps assignment**, demonstrating modern software engineering practices including:
 
 * Web application development using Flask
@@ -16,10 +19,6 @@ A complete **Flask-based Gym Management System** developed as part of a **DevOps
 * Automated testing using Pytest
 * Containerization using Docker
 * CI/CD pipelines using Jenkins and GitHub Actions
-
----
-
-## 🚀 Project Overview
 
 ACEest Fitness & Gym is a lightweight web application designed to manage:
 
@@ -222,15 +221,32 @@ GitHub Actions automates testing on every code change.
 Below Windows shows different activities done to complete the assignment.
 
 
-**ACest-Fitness-Gym Testing Page**
+## ACest-Fitness-Gym TESTING PAGE
+
 *	Local setup and execution instructions.
 
 <img width="903" height="488" alt="image" src="https://github.com/user-attachments/assets/6da60c72-8534-46ad-9151-94d298443260" />
 
+<img width="391" height="365" alt="image" src="https://github.com/user-attachments/assets/938b867e-d20f-4ed4-b64e-31779ffb1dbf" />
 
-<img width="416" height="362" alt="image" src="https://github.com/user-attachments/assets/716d6d4d-0b32-47b4-b94d-c4d3e0c89154" />
+<img width="479" height="493" alt="image" src="https://github.com/user-attachments/assets/c77401eb-340c-439a-8ef2-d0d584746c54" />
 
+## <img width="32" height="32" alt="pytest-original-32px" src="https://github.com/user-attachments/assets/8a56976d-cbf6-43a2-a964-378ac692ffa4" /> PYTEST
 <img width="1003" height="370" alt="image" src="https://github.com/user-attachments/assets/8b9cbc79-1bef-4141-bef5-c8d85461f5a8" />
+
+## <img width="48" height="48" alt="icons8-docker-48" src="https://github.com/user-attachments/assets/07964fed-5d45-4bdc-9143-77485723ce33" /> DOCKER TEST
+
+![1](https://github.com/user-attachments/assets/03dd006a-71e2-471b-8770-24b18c4a2bde)
+
+![2](https://github.com/user-attachments/assets/cc0dca67-fcdc-4b90-aa8b-d2ceec2357b5)
+
+![3](https://github.com/user-attachments/assets/72f35d2c-f677-44eb-82a0-e94faf23dff3)
+
+![4](https://github.com/user-attachments/assets/069781dc-75ae-4237-9a15-fd56ecbd9291)
+
+
+
+
 
 ---
 
