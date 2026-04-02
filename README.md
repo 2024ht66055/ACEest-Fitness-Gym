@@ -37,8 +37,8 @@ The project showcases how an application evolves from **local development to a f
 * Simple login system
 * Default admin user:
 
-  * Username: `2024ht66055`
-  * Password: `2024@wilp`
+  * Username: `admin`
+  * Password: `admin`
 
 ### 👤 Client Management
 
