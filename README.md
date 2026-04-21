@@ -66,7 +66,7 @@ The project showcases how an application evolves from **local development to a f
 | Containerization | Docker                   |
 | CI/CD            | Jenkins + GitHub Actions |
 | Version Control  | Git & GitHub             |
-
+ 
 ---
 
 ## 📁 Project Structure
