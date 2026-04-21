@@ -1,85 +1,116 @@
-# ============================================
-# ACEest Fitness & Gym Management System
-# Version: v1
-# Description: Basic Flask application with client and workout management
-# ============================================
-
 from flask import Flask, request
 import sqlite3
-import random
-
-from flask import Flask, request
-import sqlite3
-import random
-
-app = Flask(__name__)
+from datetime import datetime, date
+import matplotlib.pyplot as plt
 
 DB_NAME = "aceest_fitness.db"
 
-program_templates = {
-    "Fat Loss": ["Full Body HIIT", "Circuit Training", "Cardio + Weights"],
-    "Muscle Gain": ["Push/Pull/Legs", "Upper/Lower Split", "Full Body Strength"],
-    "Beginner": ["Full Body 3x/week", "Light Strength + Mobility"]
-}
-# Function to initialize database
-def init_db():
-    conn = sqlite3.connect(DB_NAME)
-    cur = conn.cursor()
 
-    cur.execute("""
-    CREATE TABLE IF NOT EXISTS users (
-        username TEXT PRIMARY KEY,
-        password TEXT,
-        role TEXT
-    )
-    """)
+class ACEestApp:
+    def __init__(self, root: tk.Tk):
+        self.root = root
+        self.root.title("ACEest Fitness & Performance")
+        self.root.geometry("1300x850")
+        self.root.configure(bg="#1a1a1a")
 
-    cur.execute("""
-    CREATE TABLE IF NOT EXISTS clients (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT UNIQUE,
-        age INTEGER,
-        height REAL,
-        weight REAL,
-        program TEXT,
-        calories INTEGER,
-        target_weight REAL,
-        target_adherence INTEGER,
-        membership_status TEXT,
-        membership_end TEXT
-    )
-    """)
+        self.conn = None
+        self.cur = None
 
-    cur.execute("""
-    CREATE TABLE IF NOT EXISTS progress (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        client_name TEXT,
-        week TEXT,
-        adherence INTEGER
-    )
-    """)
+        self.current_client = None
 
-    cur.execute("""
-    CREATE TABLE IF NOT EXISTS workouts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        client_name TEXT,
-        date TEXT,
-        workout_type TEXT,
-        duration_min INTEGER,
-        notes TEXT
-    )
-    """)
+        self.init_db()
+        self.setup_data()
+        self.setup_ui()
+        self.refresh_client_list()
 
-    cur.execute("""
-    CREATE TABLE IF NOT EXISTS exercises (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        workout_id INTEGER,
-        name TEXT,
-        sets INTEGER,
-        reps INTEGER,
-        weight REAL
-    )
-    """)
+    # ---------- DATABASE ----------
+
+    def init_db(self):
+        self.conn = sqlite3.connect(DB_NAME)
+        self.cur = self.conn.cursor()
+
+        # Ensure clients table has the correct columns.
+        # For a simple desktop app, easiest is to drop and recreate if schema is old.
+        self.cur.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='clients'"
+        )
+        exists = self.cur.fetchone() is not None
+
+        if exists:
+            # Check schema
+            self.cur.execute("PRAGMA table_info(clients)")
+            cols = [row[1] for row in self.cur.fetchall()]
+            required = {
+                "id",
+                "name",
+                "age",
+                "height",
+                "weight",
+                "program",
+                "calories",
+                "target_weight",
+                "target_adherence",
+            }
+            if not required.issubset(set(cols)):
+                # Drop and recreate with full schema
+                self.cur.execute("DROP TABLE clients")
+
+        # Create clients with full schema
+        self.cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS clients (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT UNIQUE,
+                age INTEGER,
+                height REAL,
+                weight REAL,
+                program TEXT,
+                calories INTEGER,
+                target_weight REAL,
+                target_adherence INTEGER
+            )
+            """
+        )
+
+        # Weekly adherence
+        self.cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS progress (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                client_name TEXT,
+                week TEXT,
+                adherence INTEGER
+            )
+            """
+        )
+
+        # Workouts (session-level)
+        self.cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS workouts (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                client_name TEXT,
+                date TEXT,
+                workout_type TEXT,
+                duration_min INTEGER,
+                notes TEXT
+            )
+            """
+        )
+
+        # Exercises (per workout)
+        self.cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS exercises (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                workout_id INTEGER,
+                name TEXT,
+                sets INTEGER,
+                reps INTEGER,
+                weight REAL
+            )
+            """
+        )
 
     cur.execute("""
     CREATE TABLE IF NOT EXISTS metrics (
@@ -98,7 +129,7 @@ def init_db():
 
     conn.commit()
     conn.close()
-# Function to validate login credentials
+
 def check_login(username, password):
     conn = sqlite3.connect(DB_NAME)
     cur = conn.cursor()
@@ -109,7 +140,7 @@ def check_login(username, password):
     row = cur.fetchone()
     conn.close()
     return row
-# Function to fetch all clients
+
 def get_all_clients():
     conn = sqlite3.connect(DB_NAME)
     cur = conn.cursor()
@@ -226,169 +257,210 @@ def clients():
             add_client(name)
             message = f"Client '{name}' saved successfully"
         else:
-            message = "Client name cannot be empty"
+            category = "Obese"
+            risk = "Higher risk; prioritize fat loss, consistency, and supervision."
 
-    rows = get_all_clients()
+        messagebox.showinfo(
+            "BMI Info",
+            f"BMI for {self.current_client}: {bmi} ({category})\n\nRisk note: {risk}",
+        )
 
-    html = """
-    <h2>Clients</h2>
-    <form method="post">
-        <label>Client Name:</label><br>
-        <input type="text" name="name"><br><br>
-        <button type="submit">Add Client</button>
-    </form>
-    """
+    # ---------- WORKOUT LOGGING ----------
 
-    if message:
-        html += f"<p><b>{message}</b></p>"
+    def ensure_client(self) -> bool:
+        name = self.current_client or self.name.get().strip() or self.client_list.get()
+        if not name:
+            messagebox.showwarning("No Client", "Select or enter client first")
+            return False
+        self.current_client = name
+        return True
 
-    html += """
-    <h3>Saved Clients</h3>
-    <table border="1" cellpadding="8" cellspacing="0">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Membership Status</th>
-        </tr>
-    """
+    def open_log_workout_window(self):
+        if not self.ensure_client():
+            return
 
-    for row in rows:
-        html += f"""
-        <tr>
-            <td>{row[0]}</td>
-            <td><a href="/client/{row[0]}">{row[1]}</a></td>
-            <td>{row[2] if row[2] else ''}</td>
-        </tr>
-        """
+        win = tk.Toplevel(self.root)
+        win.title(f"Log Workout – {self.current_client}")
+        win.configure(bg="#1a1a1a")
+        win.geometry("450x500")
 
-    html += """
-    </table>
-    <br>
-    <p><a href="/">Back to Home</a></p>
-    """
+        tk.Label(win, text="Date (YYYY-MM-DD)", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        date_var = tk.StringVar(value=date.today().isoformat())
+        tk.Entry(win, textvariable=date_var, bg="#333", fg="white").pack()
 
-    return html
+        tk.Label(win, text="Workout Type", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        type_var = tk.StringVar()
+        ttk.Combobox(
+            win,
+            textvariable=type_var,
+            values=["Strength", "Hypertrophy", "Conditioning", "Mixed", "Mobility"],
+            state="readonly",
+        ).pack()
 
-@app.route("/client/<int:client_id>")
-def client_detail(client_id):
-    client = get_client_by_id(client_id)
+        tk.Label(win, text="Duration (min)", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        dur_var = tk.IntVar(value=60)
+        tk.Entry(win, textvariable=dur_var, bg="#333", fg="white").pack()
 
-    if not client:
-        return "Client not found"
+        tk.Label(win, text="Notes", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        notes_text = tk.Text(win, height=4, bg="#333", fg="white")
+        notes_text.pack(fill="x", padx=10)
 
-    return f"""
-    <h2>Client Details</h2>
-    <p><b>ID:</b> {client[0]}</p>
-    <p><b>Name:</b> {client[1]}</p>
-    <p><b>Age:</b> {client[2] if client[2] is not None else ''}</p>
-    <p><b>Height:</b> {client[3] if client[3] is not None else ''}</p>
-    <p><b>Weight:</b> {client[4] if client[4] is not None else ''}</p>
-    <p><b>Program:</b> {client[5] if client[5] else ''}</p>
-    <p><b>Calories:</b> {client[6] if client[6] is not None else ''}</p>
-    <p><b>Target Weight:</b> {client[7] if client[7] is not None else ''}</p>
-    <p><b>Target Adherence:</b> {client[8] if client[8] is not None else ''}</p>
-    <p><b>Membership Status:</b> {client[9] if client[9] else ''}</p>
-    <p><b>Membership End:</b> {client[10] if client[10] else ''}</p>
+        tk.Label(win, text="Exercise Name", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        ex_name_var = tk.StringVar()
+        tk.Entry(win, textvariable=ex_name_var, bg="#333", fg="white").pack()
 
-    <p><a href="/client/{client_id}/generate-program">Generate Program</a></p>
-    <p><a href="/client/{client_id}/workouts">Manage Workouts</a></p>
-    <p><a href="/clients">Back to Clients</a></p>
-    """
+        tk.Label(win, text="Sets", bg="#1a1a1a", fg="white").pack(pady=(5, 0))
+        sets_var = tk.IntVar(value=3)
+        tk.Entry(win, textvariable=sets_var, bg="#333", fg="white").pack()
 
-@app.route("/client/<int:client_id>/generate-program")
-def generate_program(client_id):
-    client = get_client_by_id(client_id)
+        tk.Label(win, text="Reps", bg="#1a1a1a", fg="white").pack(pady=(5, 0))
+        reps_var = tk.IntVar(value=10)
+        tk.Entry(win, textvariable=reps_var, bg="#333", fg="white").pack()
 
-    if not client:
-        return "Client not found"
+        tk.Label(win, text="Weight (kg)", bg="#1a1a1a", fg="white").pack(pady=(5, 0))
+        ex_weight_var = tk.DoubleVar(value=0.0)
+        tk.Entry(win, textvariable=ex_weight_var, bg="#333", fg="white").pack()
 
-    program = generate_program_for_client(client_id)
-
-    return f"""
-    <h2>Program Generated</h2>
-    <p>Program for <b>{client[1]}</b>: {program}</p>
-    <p><a href="/client/{client_id}">Back to Client Details</a></p>
-    """
-
-@app.route("/client/<int:client_id>/workouts", methods=["GET", "POST"])
-def client_workouts(client_id):
-    client = get_client_by_id(client_id)
-
-    if not client:
-        return "Client not found"
-
-    message = ""
-
-    if request.method == "POST":
-        workout_date = request.form.get("date", "").strip()
-        workout_type = request.form.get("workout_type", "").strip()
-        duration_min = request.form.get("duration_min", "").strip()
-        notes = request.form.get("notes", "").strip()
-
-        if workout_date and workout_type and duration_min:
+        def save_workout():
             try:
-                duration_value = int(duration_min)
-                add_workout_for_client(client[1], workout_date, workout_type, duration_value, notes)
-                message = "Workout added successfully"
-            except ValueError:
-                message = "Duration must be a number"
-        else:
-            message = "Date, workout type, and duration are required"
+                w_date = date_var.get().strip()
+                w_type = type_var.get().strip()
+                duration = int(dur_var.get())
+                notes = notes_text.get("1.0", "end").strip()
 
-    workouts = get_workouts_for_client(client[1])
+                if not w_date or not w_type:
+                    messagebox.showerror("Error", "Date and workout type are required")
+                    return
 
-    html = f"""
-    <h2>Workouts for {client[1]}</h2>
+                self.cur.execute(
+                    """
+                    INSERT INTO workouts (client_name, date, workout_type, duration_min, notes)
+                    VALUES (?, ?, ?, ?, ?)
+                    """,
+                    (self.current_client, w_date, w_type, duration, notes),
+                )
+                workout_id = self.cur.lastrowid
 
-    <form method="post">
-        <label>Date:</label><br>
-        <input type="text" name="date" placeholder="YYYY-MM-DD"><br><br>
+                ex_name = ex_name_var.get().strip()
+                ex_sets = sets_var.get()
+                ex_reps = reps_var.get()
+                ex_weight = ex_weight_var.get()
 
-        <label>Workout Type:</label><br>
-        <input type="text" name="workout_type" placeholder="Strength / Cardio / Mobility"><br><br>
+                if ex_name:
+                    self.cur.execute(
+                        """
+                        INSERT INTO exercises (workout_id, name, sets, reps, weight)
+                        VALUES (?, ?, ?, ?, ?)
+                        """,
+                        (workout_id, ex_name, ex_sets, ex_reps, ex_weight),
+                    )
 
-        <label>Duration (minutes):</label><br>
-        <input type="text" name="duration_min"><br><br>
+                self.conn.commit()
+                self.set_status(f"Workout logged for {self.current_client}")
+                messagebox.showinfo("Saved", "Workout logged successfully")
+                win.destroy()
+            except Exception as e:
+                messagebox.showerror("Error", str(e))
 
-        <label>Notes:</label><br>
-        <textarea name="notes" rows="4" cols="40"></textarea><br><br>
+        ttk.Button(win, text="Save Workout", command=save_workout).pack(pady=15)
 
-        <button type="submit">Add Workout</button>
-    </form>
-    """
+    def open_log_metrics_window(self):
+        if not self.ensure_client():
+            return
 
-    if message:
-        html += f"<p><b>{message}</b></p>"
+        win = tk.Toplevel(self.root)
+        win.title(f"Log Body Metrics – {self.current_client}")
+        win.configure(bg="#1a1a1a")
+        win.geometry("350x300")
 
-    html += """
-    <h3>Workout History</h3>
-    <table border="1" cellpadding="8" cellspacing="0">
-        <tr>
-            <th>Date</th>
-            <th>Workout Type</th>
-            <th>Duration</th>
-            <th>Notes</th>
-        </tr>
-    """
+        tk.Label(win, text="Date (YYYY-MM-DD)", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        date_var = tk.StringVar(value=date.today().isoformat())
+        tk.Entry(win, textvariable=date_var, bg="#333", fg="white").pack()
 
-    for workout in workouts:
-        html += f"""
-        <tr>
-            <td>{workout[0]}</td>
-            <td>{workout[1]}</td>
-            <td>{workout[2]}</td>
-            <td>{workout[3] if workout[3] else ''}</td>
-        </tr>
-        """
+        tk.Label(win, text="Weight (kg)", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        weight_var = tk.DoubleVar(value=self.weight.get() if self.weight.get() > 0 else 0.0)
+        tk.Entry(win, textvariable=weight_var, bg="#333", fg="white").pack()
 
-    html += f"""
-    </table>
-    <br>
-    <p><a href="/client/{client_id}">Back to Client Details</a></p>
-    <p><a href="/clients">Back to Clients</a></p>
-    """
+        tk.Label(win, text="Waist (cm)", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        waist_var = tk.DoubleVar(value=0.0)
+        tk.Entry(win, textvariable=waist_var, bg="#333", fg="white").pack()
 
-    return html
+        tk.Label(win, text="Bodyfat (%)", bg="#1a1a1a", fg="white").pack(pady=(10, 0))
+        bf_var = tk.DoubleVar(value=0.0)
+        tk.Entry(win, textvariable=bf_var, bg="#333", fg="white").pack()
+
+        def save_metrics():
+            try:
+                m_date = date_var.get().strip()
+                m_weight = weight_var.get()
+                m_waist = waist_var.get()
+                m_bf = bf_var.get()
+
+                if not m_date:
+                    messagebox.showerror("Error", "Date is required")
+                    return
+
+                self.cur.execute(
+                    """
+                    INSERT INTO metrics (client_name, date, weight, waist, bodyfat)
+                    VALUES (?, ?, ?, ?, ?)
+                    """,
+                    (self.current_client, m_date, m_weight, m_waist, m_bf),
+                )
+                self.conn.commit()
+                if m_weight > 0:
+                    self.weight.set(m_weight)
+                self.refresh_summary()
+                self.set_status(f"Metrics logged for {self.current_client}")
+                messagebox.showinfo("Saved", "Metrics logged successfully")
+                win.destroy()
+            except Exception as e:
+                messagebox.showerror("Error", str(e))
+
+        ttk.Button(win, text="Save Metrics", command=save_metrics).pack(pady=15)
+
+    # ---------- WORKOUT HISTORY (TREEVIEW) ----------
+
+    def open_workout_history_window(self):
+        if not self.ensure_client():
+            return
+
+        win = tk.Toplevel(self.root)
+        win.title(f"Workout History – {self.current_client}")
+        win.geometry("700x400")
+
+        columns = ("date", "type", "duration", "notes")
+        tree = ttk.Treeview(win, columns=columns, show="headings")
+        tree.heading("date", text="Date")
+        tree.heading("type", text="Type")
+        tree.heading("duration", text="Duration (min)")
+        tree.heading("notes", text="Notes")
+
+        tree.column("date", width=100, anchor="center")
+        tree.column("type", width=100, anchor="center")
+        tree.column("duration", width=120, anchor="center")
+        tree.column("notes", width=350, anchor="w")
+
+        tree.pack(fill="both", expand=True)
+
+        self.cur.execute(
+            """
+            SELECT date, workout_type, duration_min, notes
+            FROM workouts
+            WHERE client_name=?
+            ORDER BY date DESC, id DESC
+            """,
+            (self.current_client,),
+        )
+        rows = self.cur.fetchall()
+
+        for row in rows:
+            tree.insert("", "end", values=row)
+
+        self.set_status(f"Loaded workout history for {self.current_client}")
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    root = tk.Tk()
+    app = ACEestApp(root)
+    root.mainloop()
