@@ -1,3 +1,8 @@
+# ============================================
+# ACEest Fitness & Gym Management System
+# Version: v3
+# Description: Improved UI and user experience
+# ============================================
 from flask import Flask, request
 import sqlite3
 import random
@@ -164,11 +169,13 @@ def get_workouts_for_client(client_name):
 @app.route("/")
 def home():
     return """
-    <h1>ACEest Fitness Flask App</h1>
-    <p><a href="/init-db">Initialize Database</a></p>
-    <p><a href="/login">Go to Login</a></p>
-    <p><a href="/clients">Manage Clients</a></p>
-    """
+<h1 style='color:blue;'>🏋️ ACEest Fitness Dashboard</h1>
+<p>Welcome to the Gym Management System</p>
+<hr>
+<p><a href="/init-db">Initialize Database</a></p>
+<p><a href="/login">Login</a></p>
+<p><a href="/clients">Manage Clients</a></p>
+"""
 
 @app.route("/init-db")
 def initialize_database():
