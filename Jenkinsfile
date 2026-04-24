@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t 2024ht66055 .'
+                sh 'docker build -t 2024ht66055 .'
             }
         }
 
         stage('Run Tests in Docker') {
             steps {
-                bat 'docker run --rm 2024ht66055 pytest'
+                sh 'docker run --rm 2024ht66055 pytest'
             }
         }
     }
